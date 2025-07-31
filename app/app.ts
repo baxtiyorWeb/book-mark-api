@@ -57,3 +57,6 @@ app.use("/api/todo", todoRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/birthday", birthdayRoutes);
+
+
+export default app;
