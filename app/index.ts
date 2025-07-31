@@ -10,12 +10,4 @@ app.listen(PORT).on("listening", async () => {
   logger.info(`Server is listening on port http://localhost:${PORT}`);
 });
 
-export default function handler(req: any, res: any) {
-  return new Promise((resolve, reject) => {
-    app(req, res, (err) => {
-      if (err) return reject(err);
-      resolve(undefined);
-    });
-  });
-}
 module.exports = app;
