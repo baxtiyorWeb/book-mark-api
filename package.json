@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsup app --clean --format cjs,esm --env.NODE_ENV production",
+    "build": "tsup app/app.ts --clean --format cjs --out-dir api",
     "check": "biome check --apply .",
     "dev": "tsx watch app/index.ts",
     "test": "vitest",
