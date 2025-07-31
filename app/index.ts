@@ -10,4 +10,4 @@ app.listen(PORT).on("listening", async () => {
   logger.info(`Server is listening on port http://localhost:${PORT}`);
 });
 
-export default app;
+module.exports = app
