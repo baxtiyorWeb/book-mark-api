@@ -30,14 +30,14 @@ const swaggerSpec = swaggerJSDoc(swaggerOptions);
 export function setupSwagger(app: Express) {
   const swaggerDistPath = swaggerUiDistPath.getAbsoluteFSPath();
 
-  app.use("/swagger-assets", express.static(swaggerDistPath));
+  app.use('/swagger-assets', express.static(swaggerDistPath));
 
   app.use(
     "/docs",
     swaggerUi.serve,
     swaggerUi.setup(swaggerSpec, {
       explorer: true,
-      customCssUrl: "/swagger-assets/swagger-ui.css", // Faqat customCssUrl ni qoldiramiz
+      customCssUrl: "/swagger-assets/swagger-ui.css",
       swaggerOptions: {
         url: "/swagger.json",
       },

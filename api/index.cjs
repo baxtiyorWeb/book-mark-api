@@ -59867,7 +59867,6 @@ function setupSwagger(app2) {
     import_swagger_ui_express.default.setup(swaggerSpec, {
       explorer: true,
       customCssUrl: "/swagger-assets/swagger-ui.css",
-      // Faqat customCssUrl ni qoldiramiz
       swaggerOptions: {
         url: "/swagger.json"
       }

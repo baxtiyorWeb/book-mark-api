@@ -14,7 +14,7 @@
   ],
   "functions": {
     "api/index.cjs": {
-      "includeFiles": ["node_modules/swagger-ui-dist/**"]
+      "includeFiles": "node_modules/swagger-ui-dist/**"
     }
   }
 }
