@@ -1,13 +1,7 @@
 import type { Express } from "express";
 // src/swagger.ts
-import express from "express";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
-
-const app = express();
-
-// Statik fayllarni xizmat ko'rsatish
-app.use(express.static("public"));
 
 const swaggerOptions: swaggerJSDoc.Options = {
   definition: {

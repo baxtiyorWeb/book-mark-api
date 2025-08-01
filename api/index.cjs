@@ -18304,7 +18304,7 @@ var require_body_parser = __commonJS({
 });
 
 // app/app.ts
-var import_express6 = __toESM(require("express"), 1);
+var import_express5 = __toESM(require("express"), 1);
 var import_body_parser = __toESM(require_body_parser(), 1);
 var import_cookie_parser = __toESM(require("cookie-parser"), 1);
 var import_cors = __toESM(require("cors"), 1);
@@ -19379,11 +19379,8 @@ router4.delete(
 var user_route_default = router4;
 
 // app/swagger.ts
-var import_express5 = __toESM(require("express"), 1);
 var import_swagger_jsdoc = __toESM(require("swagger-jsdoc"), 1);
 var import_swagger_ui_express = __toESM(require("swagger-ui-express"), 1);
-var app = (0, import_express5.default)();
-app.use(import_express5.default.static("public"));
 var swaggerOptions = {
   definition: {
     openapi: "3.0.0",
@@ -19407,8 +19404,8 @@ var swaggerOptions = {
   // 👈 Path to your route files
 };
 var swaggerSpec = (0, import_swagger_jsdoc.default)(swaggerOptions);
-function setupSwagger(app3) {
-  app3.use(
+function setupSwagger(app2) {
+  app2.use(
     "/docs",
     import_swagger_ui_express.default.serve,
     import_swagger_ui_express.default.setup(swaggerSpec, { explorer: true })
@@ -19490,27 +19487,27 @@ function home(req, res) {
 }
 
 // app/app.ts
-var app2 = (0, import_express6.default)();
+var app = (0, import_express5.default)();
 if (process.env.NODE_ENV === "production") {
-  app2.use((0, import_helmet.default)());
+  app.use((0, import_helmet.default)());
 }
-app2.use((0, import_cors.default)());
-app2.use(import_body_parser.default.json());
-app2.use(import_body_parser.default.urlencoded({ extended: true }));
-app2.use((0, import_cookie_parser.default)());
-app2.use(import_jsend.default.middleware);
-app2.use(error_handler_default);
-setupSwagger(app2);
-app2.get("/", home);
-app2.get("/api", (_req, res) => {
+app.use((0, import_cors.default)());
+app.use(import_body_parser.default.json());
+app.use(import_body_parser.default.urlencoded({ extended: true }));
+app.use((0, import_cookie_parser.default)());
+app.use(import_jsend.default.middleware);
+app.use(error_handler_default);
+setupSwagger(app);
+app.get("/", home);
+app.get("/api", (_req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.json({ name: "Hello world" });
 });
-app2.use("/api/todo", todo_default);
-app2.use("/api/auth", auth_route_default);
-app2.use("/api/user", user_route_default);
-app2.use("/api/birthday", birthday_route_default);
-var app_default = app2;
+app.use("/api/todo", todo_default);
+app.use("/api/auth", auth_route_default);
+app.use("/api/user", user_route_default);
+app.use("/api/birthday", birthday_route_default);
+var app_default = app;
 
 // database/connection.ts
 var import_mongoose5 = __toESM(require("mongoose"), 1);
