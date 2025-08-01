@@ -2,7 +2,7 @@
   "version": 2,
   "buildCommand": "npm run build",
   "functions": {
-    "api/index.js": {
+    "api/index.cjs": {
       "includeFiles": "{dist/openapi.yaml,node_modules/swagger-ui-dist/**}"
     }
   },
