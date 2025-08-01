@@ -1,4 +1,4 @@
-import app from "./app.js";
+import app from "./app.ts";
 import { connectToDB } from "../database/connection.js";
 import logger from "../logger.js";
 import "dotenv/config";

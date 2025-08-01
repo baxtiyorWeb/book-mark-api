@@ -19405,11 +19405,7 @@ var swaggerOptions = {
 };
 var swaggerSpec = (0, import_swagger_jsdoc.default)(swaggerOptions);
 function setupSwagger(app2) {
-  app2.use(
-    "/docs",
-    import_swagger_ui_express.default.serve,
-    import_swagger_ui_express.default.setup(swaggerSpec, { explorer: true })
-  );
+  app2.use("/docs", import_swagger_ui_express.default.serve, import_swagger_ui_express.default.setup(swaggerSpec, { explorer: true }));
 }
 
 // app/home-response.ts
