@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import helmet from "helmet";
 import jsend from "jsend";
-
+// ok
 import errorHandler from "../middlewares/error-handler.js";
 import authRoutes from "./routes/auth/auth.route.js";
 import birthdayRoutes from "./routes/birthday/birthday.route.js";
