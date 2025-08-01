@@ -19400,7 +19400,7 @@ var swaggerOptions = {
       }
     }
   },
-  apis: ["./app/routes/**/*.ts"]
+  apis: ["./app/routes/**/*.ts", "./app/routes/**/*.js"]
   // 👈 Path to your route files
 };
 var swaggerSpec = (0, import_swagger_jsdoc.default)(swaggerOptions);
