@@ -1,15 +1,19 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "functions": {
-    "api/index.cjs": {
-      "includeFiles": "{dist/openapi.yaml,node_modules/swagger-ui-dist/**}"
+  "builds": [
+    {
+      "src": "api/index.cjs",
+      "use": "@vercel/node"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "api/index.cjs"
+    },
+    {
+      "src": "/docs",
+      "dest": "/index.ts"
     }
   ]
 }
