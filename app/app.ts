@@ -20,7 +20,7 @@ export const app = express();
 // middleware routes
 const isProduction = process.env.NODE_ENV === "production";
 if (isProduction) {
-	app.use(helmet());
+  app.use(helmet());
 }
 app.use(cors());
 app.use(bodyParser.json());
@@ -48,8 +48,8 @@ setupSwagger(app);
 app.get("/", home);
 
 app.get("/api", (_req, res: express.Response) => {
-	res.setHeader("Content-Type", "application/json");
-	res.json({ name: "Hello world" });
+  res.setHeader("Content-Type", "application/json");
+  res.json({ name: "Hello world" });
 });
 
 // Routes
@@ -58,5 +58,4 @@ app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/birthday", birthdayRoutes);
 
-
-export default app;
+module.exports = app;
