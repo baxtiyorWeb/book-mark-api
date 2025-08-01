@@ -19488,7 +19488,6 @@ function home(req, res) {
 
 // app/app.ts
 var app = (0, import_express5.default)();
-app.use(import_express5.default.static("public"));
 if (process.env.NODE_ENV === "production") {
   app.use((0, import_helmet.default)());
 }
