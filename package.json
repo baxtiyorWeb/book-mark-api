@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "build": "tsup app/app.ts --clean --format cjs --out-dir api",
+    "build": "tsup app/index.ts --clean --format cjs --out-dir api",
     "dev": "tsx watch app/index.ts",
     "start": "tsx app/index.ts",
     "test": "vitest",
