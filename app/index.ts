@@ -1,7 +1,6 @@
-import { connectToDB } from "../database/connection";
-import logger from "../logger";
-import app from "./app"; // import default
-
+import app from "./app.js";
+import { connectToDB } from "../database/connection.js";
+import logger from "../logger.js";
 import "dotenv/config";
 
 const PORT = process.env.PORT || 3001;

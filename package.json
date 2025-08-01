@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "build": "tsup app/index.ts --clean --format cjs --out-dir api",
+    "build": "tsup app/index.ts --clean --format esm --out-dir api",
     "dev": "tsx watch app/index.ts",
     "start": "tsx app/index.ts",
     "test": "vitest",
