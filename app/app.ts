@@ -10,10 +10,12 @@ import authRoutes from "./routes/auth/auth.route.js";
 import birthdayRoutes from "./routes/birthday/birthday.route.js";
 import todoRoutes from "./routes/todo/todo.js";
 import userRoutes from "./routes/user/user.route.js";
-import { setupSwagger } from "./swagger";
+import { setupSwagger } from "./swagger.js";
 import { home } from "./home-response.js";
 
 const app = express();
+
+app.use(express.static('public'));
 
 if (process.env.NODE_ENV === "production") {
   app.use(helmet());
