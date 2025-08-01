@@ -15,7 +15,6 @@ import { home } from "./home-response.js";
 
 const app = express();
 
-app.use(express.static('public'));
 
 if (process.env.NODE_ENV === "production") {
   app.use(helmet());
