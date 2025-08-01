@@ -15,7 +15,7 @@ import userRoutes from "./routes/user/user.route";
 
 import { setupSwagger } from "./swagger";
 import { home } from "./home-response";
-export const app = express();
+const app = express();
 
 // middleware routes
 const isProduction = process.env.NODE_ENV === "production";

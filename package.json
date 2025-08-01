@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "tsup app/app.ts --clean --format cjs --out-dir api",
     "dev": "tsx watch app/index.ts",
