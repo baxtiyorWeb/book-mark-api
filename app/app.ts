@@ -1,3 +1,4 @@
+// app.js
 import express from "express";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
@@ -9,7 +10,6 @@ import authRoutes from "./routes/auth/auth.route.js";
 import birthdayRoutes from "./routes/birthday/birthday.route.js";
 import todoRoutes from "./routes/todo/todo.js";
 import userRoutes from "./routes/user/user.route.js";
-
 import { setupSwagger } from "./swagger.js";
 import { home } from "./home-response.js";
 
@@ -38,4 +38,5 @@ app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/birthday", birthdayRoutes);
 
+// ❗ Express instance ni default export qilamiz
 export default app;

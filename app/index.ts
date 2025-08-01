@@ -5,7 +5,11 @@ import "dotenv/config";
 
 const PORT = process.env.PORT || 3001;
 
-app.listen(PORT, async () => {
+const startServer = async () => {
   await connectToDB();
-  logger.info(`Server is listening on port http://localhost:${PORT}`);
-});
+  app.listen(PORT, () => {
+    logger.info(`Server is listening on http://localhost:${PORT}`);
+  });
+};
+
+startServer();
