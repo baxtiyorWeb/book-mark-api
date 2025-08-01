@@ -10,7 +10,7 @@ import authRoutes from "./routes/auth/auth.route.js";
 import birthdayRoutes from "./routes/birthday/birthday.route.js";
 import todoRoutes from "./routes/todo/todo.js";
 import userRoutes from "./routes/user/user.route.js";
-import { setupSwagger } from "./swagger.ts";
+import { setupSwagger } from "./swagger";
 import { home } from "./home-response.ts";
 
 const app = express();

@@ -1,7 +1,8 @@
 import type { Express } from "express";
-// src/swagger.ts
+import express from "express";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
+import swaggerUiDistPath from "swagger-ui-dist";
 
 const swaggerOptions: swaggerJSDoc.Options = {
   definition: {
@@ -16,20 +17,35 @@ const swaggerOptions: swaggerJSDoc.Options = {
         bearerAuth: {
           type: "http",
           scheme: "bearer",
-          bearerFormat: "JWT", // optional, for UI clarity
+          bearerFormat: "JWT",
         },
       },
     },
   },
-  apis: ["./app/routes/**/*.ts", "./app/routes/**/*.js"], // 👈 Path to your route files
+  apis: ["./app/routes/**/*.ts", "./app/routes/**/*.js"],
 };
 
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
 
 export function setupSwagger(app: Express) {
+  const swaggerDistPath = swaggerUiDistPath.getAbsoluteFSPath();
+
+  app.use("/swagger-assets", express.static(swaggerDistPath));
+
   app.use(
     "/docs",
     swaggerUi.serve,
-    swaggerUi.setup(swaggerSpec, { explorer: true })
+    swaggerUi.setup(swaggerSpec, {
+      explorer: true,
+      customCssUrl: "/swagger-assets/swagger-ui.css", // Faqat customCssUrl ni qoldiramiz
+      swaggerOptions: {
+        url: "/swagger.json",
+      },
+    })
   );
+
+  app.get("/swagger.json", (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.send(swaggerSpec);
+  });
 }
